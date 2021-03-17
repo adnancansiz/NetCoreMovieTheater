@@ -1,0 +1,38 @@
+﻿@model List<MovieGenreVM>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Movie Name</th>
+                <th>Description</th>
+                <th>Duration</th>
+                <th>Genres</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var movie in Model)
+            {
+            <tr>
+                <td>@movie.MovieId</td>
+                <td>@movie.MovieName</td>
+                <td>@movie.Description</td>
+                <td>@movie.Duration</td>
+                <td>@movie.GenreName</td>
+                <td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { Id = movie.MovieId }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Update", "Edit", new { Id = movie.MovieId }, new { @class = "btn btn-warning" })
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

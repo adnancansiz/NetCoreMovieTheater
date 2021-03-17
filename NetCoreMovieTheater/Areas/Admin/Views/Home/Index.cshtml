@@ -1,0 +1,49 @@
+﻿@model List<Service.Models.ViewModels.MovieGenreVM>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        Movie List
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Movie Name</th>
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Genre</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Movie Name</th>
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Genre</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var movie in Model)
+                    {
+                        <tr>
+                            <td>@movie.MovieId</td>
+                            <td>@movie.MovieName</td>
+                            <td>@movie.Description</td>
+                            <td>@movie.Duration</td>
+                            <td>@movie.GenreName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

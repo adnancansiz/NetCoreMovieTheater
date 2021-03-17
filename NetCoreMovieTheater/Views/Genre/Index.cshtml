@@ -1,0 +1,24 @@
+﻿@model List<DataAccess.Entities.Genre>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class=" card-body bg-transparent">
+    <div class="row">
+        @foreach (var genre in Model)
+        {
+            <div class="col-md-3">
+                <div class="card text-center " style="width: 18rem;">
+                    <img src="/Images/resim.jpg" class="movie-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@genre.GenreName</h5>
+                        <p class="card-text">@genre.Description</p>
+                        @Html.ActionLink("Filmlere Git","GetMovieByGenre","Genre", new { Id = genre.Id }, new { @class = "btn btn-warning" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

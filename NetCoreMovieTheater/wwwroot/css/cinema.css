@@ -1,0 +1,43 @@
+﻿.jumbotron h1{
+    font-size:38px;
+    color:#808080;
+    letter-spacing:25px;
+}
+.seat{
+    width:75px;
+    height:75px;
+    border:solid 2px #808080;
+    background-color:#808080;
+    padding:10px;
+    text-align:center;
+}
+.seat h2{
+    line-height:55px;
+    color:#fff;
+}
+.seat:hover{
+    background-color:#1b5e97;
+}
+.information{
+    margin-top:200px;
+
+}
+.seat-empty {
+    width: 35px;
+    height: 35px;
+    border: solid 1px #808080;
+    background-color: #808080;
+}
+
+.seat-full {
+    width: 35px;
+    height: 35px;
+    border: solid 1px #ff0000;
+    background-color: #ff0000;
+}
+.information-card {
+    border: solid 1px #808080;
+    border-radius:5px;
+    padding:10px;
+    margin:5px;
+}

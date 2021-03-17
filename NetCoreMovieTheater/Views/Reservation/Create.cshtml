@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 mt-2">
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="text-center">PERDE</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="container">
+                    <div class="ml-4 row">
+
+                        <div class="seat mr-1">
+                            <h2 class="number">1</h2>
+                        </div>
+                        <div class="seat mr-1">
+                            <h2 class="number">2</h2>
+                        </div>
+                        <div class="seat mr-1">
+                            <h2 class="number">3</h2>
+                        </div>
+                        <div class="seat mr-1">
+                            <h2 class="number">4</h2>
+                        </div>
+                        <div class="seat mr-1">
+                            <h2 class="number">5</h2>
+                        </div>
+                        <div class="seat mr-1">
+                            <h2 class="number">6</h2>
+                        </div>
+                        <div class="seat mr-1">
+                            <h2 class="number">7</h2>
+                        </div>
+                        <div class="seat mr-1">
+                            <h2 class="number">8</h2>
+                        </div>
+                        <div class="seat mr-1">
+                            <h2 class="number">9</h2>
+                        </div>
+                        <div class="seat mr-1">
+                            <h2 class="number">10</h2>
+                        </div>
+                        <div class="seat mr-1">
+                            <h2 class="number">11</h2>
+                        </div>
+                        <div class="seat mr-1">
+                            <h2 class="number">12</h2>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="col-md-6 mt-4 mx-auto">
+                <div class="row">
+                    <div class="seat mr-1">
+                        <h2>1</h2>
+                    </div>
+                    <div class="seat mr-1">
+                        <h2>1</h2>
+                    </div>
+                    <div class="seat mr-1">
+                        <h2>1</h2>
+                    </div>
+                    <div class="seat mr-1">
+                        <h2>1</h2>
+                    </div>
+                    <div class="seat mr-1">
+                        <h2>1</h2>
+                    </div>
+                    <div class="seat mr-1">
+                        <h2>1</h2>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="information">
+                <div class="row">
+                    <div class="col-md-4 mx-auto information-card">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="seat-empty">
+                                </div>
+                            </div>
+                            <div class="col text-left">
+                                <span class="mt-2">BOŞ</span>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-2">
+                                <div class="seat-full">
+                                </div>
+                            </div>
+                            <div class="col text-left">
+                                <span class="mt-2">DOLU</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{ 
+
+<script>
+    $(function () {
+        $(".number").click(function () {
+            var value = $(this).html();
+            console.log(value);
+        })
+    })
+</script>
+}

@@ -1,0 +1,35 @@
+﻿@model List<Salloon>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Saloon Name</th>
+                <th>Capacity</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var salloon in Model)
+            {
+            <tr>
+                <td>@salloon.Id</td>
+                <td>@salloon.SalloonName</td>
+                <td>@salloon.Capacity</td>
+                <td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { Id = salloon.Id }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Update", "Edit", new { Id = salloon.Id }, new { @class = "btn btn-warning" })
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

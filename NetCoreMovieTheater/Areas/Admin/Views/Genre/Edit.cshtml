@@ -1,0 +1,24 @@
+﻿@model Genre
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form asp-action="Edit" method="post">
+                <div class="form-group">
+                    <label>Genre Name</label>
+                    <input asp-for="GenreName" value="@Model.GenreName" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input asp-for="Description" value="@Model.Description" type="text" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
+

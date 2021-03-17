@@ -1,0 +1,24 @@
+﻿@model List<Service.Models.ViewModels.MovieGenreVM>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class=" card-body bg-transparent">
+    <div class="row">
+        @foreach (var movie in Model)
+        {
+            <div class="col-md-3">
+                <div class="card text-center " style="width: 18rem;">
+                    <img src="/Images/resim.jpg" class="movie-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@movie.MovieName</h5>
+                        <p class="card-text">@movie.GenreName</p>
+                        <a href="#" class="btn btn-warning">Rezervasyon Yap</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

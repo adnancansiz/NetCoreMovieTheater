@@ -1,0 +1,36 @@
+﻿@model Movie
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form asp-action="Edit" method="post">
+            <div class="form-group">
+                <label>Movie Name</label>
+                <input asp-for="MovieName" type="text" class="form-control" />
+                <span asp-validation-for="MovieName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input asp-for="Description" type="text" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Duration</label>
+                <input asp-for="Duration" type="time" class="form-control" />
+            </div>
+            <div class="form-group form-check">
+                @foreach (Genre genre in ViewBag.Genre)
+                {
+                    <input type="checkbox" name="genreId" value="@genre.Id">
+                    <label for="vehicle1">@genre.GenreName</label>
+                }
+            </div>
+
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+</div>
+

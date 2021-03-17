@@ -1,0 +1,34 @@
+﻿@model List<Week>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Day</th>
+                <th>Last Day</th>
+                <th>Created Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var week in Model)
+            {
+                <tr>
+                    <td>@week.Id</td>
+                    <td>@week.FirstDay</td>
+                    <td>@week.LastDay</td>
+                    <td>@week.CreatedDate</td>
+                    <td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { Id = week.Id }, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Update", "Update", new { Id = week.Id }, new { @class = "btn btn-warning" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

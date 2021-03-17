@@ -1,0 +1,24 @@
+﻿@model Salloon
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form asp-action="Edit" method="post">
+                <div class="form-group">
+                    <label>Saloon Name</label>
+                    <input asp-for="SalloonName" value="@Model.SalloonName" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Capacity</label>
+                    <input asp-for="Capacity" value="@Model.Capacity" type="text" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
+

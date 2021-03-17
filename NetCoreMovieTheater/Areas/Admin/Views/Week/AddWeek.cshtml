@@ -1,0 +1,27 @@
+﻿@model Week
+@{
+    ViewData["Title"] = "AddWeek";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div asp-validation-summary="All">
+
+            </div>
+            <form asp-action="AddWeek" method="post">
+                <div class="form-group">
+                    <label >FirstDay</label>
+                    <input name="FirstDay" type="date" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>LastDay</label>
+                    <input name="LastDay" type="date" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿@model List<Session>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Session Time</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var session in Model)
+            {
+                <tr>
+                    <td>@session.Id</td>
+                    <td>@session.SessionTime</td>
+                    <td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { Id = session.Id }, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Update", "Edit", new { Id = session.Id }, new { @class = "btn btn-warning" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

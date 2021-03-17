@@ -1,0 +1,36 @@
+﻿@model List<Genre>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Genre Name</th>
+                <th>Description</th>
+                <th>Created Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var genre in Model)
+            {
+                <tr>
+                    <td>@genre.Id</td>
+                    <td>@genre.GenreName</td>
+                    <td>@genre.Description</td>
+                    <td>@genre.CreatedDate</td>
+                    <td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { Id = genre.Id }, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Update", "Edit", new { Id = genre.Id }, new { @class = "btn btn-warning" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

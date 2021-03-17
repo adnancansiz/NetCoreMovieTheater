@@ -1,0 +1,105 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NetCoreMovieTheater</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/cinema.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url('/Images/red-curtains.jpg');
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/Views/Home/Index.cshtml">
+                <img src="~/Images/logo.png" style=width:150px height:300px; />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto text-right">
+                    <li class="nav-item active">
+                        @Html.ActionLink("Anasayfa", "Index", "Home", null, new { @class = " nav-item btn btn-warning  ml-4" })
+                    </li>
+                    <li class="nav-item active">
+                        @Html.ActionLink("Türler", "Index", "Genre", null, new { @class = " nav-item btn btn-warning  ml-4" })
+                    </li>
+                    <li class="nav-item active">
+                        @Html.ActionLink("Rezervasyon", "Create", "Reservation", null, new { @class = " nav-item btn btn-warning  ml-4" })
+                    </li>
+                    <li class="nav-item active">
+                        @Html.ActionLink("Filmler", "Index", "Movie", null, new { @class = " nav-item btn btn-warning  ml-4" })
+                    </li>
+                    <li class="nav-item active">
+                        @Html.ActionLink("Haftalar", "Index", "Week", null, new { @class = " nav-item btn btn-warning  ml-4" })
+                    </li>
+                    <li class="nav-item active">
+                        @Html.ActionLink("Salonlar", "Index", "Salloon", null, new { @class = " nav-item btn btn-warning  ml-4" })
+                    </li>
+                    <li class="nav-item active">
+                        @Html.ActionLink("Seanslar", "Index", "Session", null, new { @class = " nav-item btn btn-warning  ml-4" })
+                    </li>
+
+                </ul>
+                <div class="form-inline my-2 my-lg-0">
+                    <ul class="navbar-nav mr-auto">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link btn btn-warning dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    @User.Identity.Name
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @if (User.IsInRole("Administrator"))
+                                    {
+                                        <a asp-action="Index" asp-controller="Home" asp-area="Admin" class="dropdown-item">Admin Panel</a>
+                                    }
+                                    <a asp-action="Profile" asp-controller="Account" asp-route-id="1" class="dropdown-item">Profile</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a asp-action="LogOut" asp-controller="Account" class="dropdown-item">LogOut</a>
+                                </div>
+                            </li>
+
+                        }
+                        else
+                        {
+                            <li>
+                                <a asp-action="Create" asp-controller="Account" class="nav-link btn btn-warning">Kayıt Ol</a>
+                            </li>
+                            <li>
+                                <a asp-action="Login" asp-controller="Account" class="nav-link btn btn-warning ml-4">Giriş Yap</a>
+                            </li>
+                        }
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - NetCoreMovieTheater - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>
